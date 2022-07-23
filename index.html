@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz App</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- bootstrap -->
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" -->
+  <!-- integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> -->
+</head>
+
+<body>
+  <div id="start-page" class="h-100 d-flex align-items-center justify-content-center">
+    <div class="w-50 h-50 d-flex flex-column bd-highlight align-items-center rounded justify-content-center"
+      >
+      <div class="mt-5 mb-auto p-2 bd-highlight align-items-center">
+        <img src="images/quiz.jpg" alt="quiz-image">
+      </div>
+      <div class="mb-5 mt-auto p-2 bd-highlight align-items-center">
+        <button onclick="startQuiz()" type="button" id="start-btn" class="btn btn-success">Start</button>
+      </div>
+    </div>
+  </div>
+  <!-- Question Page -->
+  <div id="quiz-page" class="h-100 d-flex align-items-center justify-content-center">
+    <div class="w-50 h-60 d-flex flex-column bd-highlight rounded justify-content-center"
+      style="background-color: rgb(237, 241, 245)">
+      <div class="d-flex  mb-auto justify-content-between  p-2 bd-highlight border-2 border-bottom"
+        style="background-color: rgb(234, 240, 173)">
+        <div class="me-auto p-2 fs-3 fw-semibold" id="num-of-question">1 of 5 Questions</div>
+        <div class="p-2 fs-4 fw-semibold">Time Left:</div>
+        <div class="p-2 fs-4" id="timeLeft">15s</div>
+      </div>
+      <!-- question container -->
+      <div class="question-container p-2">
+        <h3 id="question">Question ?</h3>
+      </div>
+      <!-- answer choices -->
+      <div class="d-grid gap-2 p-3" id="answer-options">
+        <button class="btn btn-outline-info" id="choice1" type="button" onclick="checkAnswer('choice1')">Button</button>
+        <button class="btn btn-outline-info" id="choice2" type="button" onclick="checkAnswer('choice2')">Button</button>
+        <button class="btn btn-outline-info" id="choice3" type="button" onclick="checkAnswer('choice3')">Button</button>
+        <button class="btn btn-outline-info" id="choice4" type="button" onclick="checkAnswer('choice4')">Button</button>
+        <input hidden id="qIdx"/>
+
+      </div>
+
+      <div class="d-flex mb-4 mt-auto p-3 bd-highlight justify-content-end">
+        <button type="button" onclick="showNextQuestion()" class="btn btn-outline-primary" id="next-btn">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- score page -->
+  <div id="result-page" class="h-100 d-flex align-items-center justify-content-center scorePage">
+    <div class="w-50 h-50 d-flex flex-column bd-highlight align-items-center  justify-content-center"
+      style="background-color: rgb(212, 109, 195)">
+      <!-- show the score -->
+      <div class="complete">
+        <h2>You've completed the Quiz!</h2></div>
+      <div class="result"><h2 id="displayScore"></h2></div>
+
+      <!-- button for replay and quit
+       -->
+      <div class="d-grid gap-2  mb-1 d-flex justify-content-around">
+        <button  class="btn btn-primary me-md-2" id="replay" type="button" onclick="showHomePage()">Replay</button>
+      </div>
+      
+    </div>
+  </div>
+  
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="quiz.js"></script>
+</body>
+
+</html>
